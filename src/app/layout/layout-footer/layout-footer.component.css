@@ -1,0 +1,13 @@
+ img,
+ footer,
+ label {
+     vertical-align: middle;
+ }
+
+ footer {
+     background-color: #3032a1;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center;
+     border: 10px;
+ }

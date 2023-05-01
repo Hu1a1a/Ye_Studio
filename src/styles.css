@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css");
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js");
+
+@font-face {
+    font-family: "NormalFont";
+    src: url(assets/fonts/icomoon.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "NavFont";
+    src: url(assets/fonts/icomoon.woff);
+    font-weight: 1500;
+    color: aliceblue;
+
+
+}
+
+* {
+    font-family: NormalFont;
+    color: aliceblue;
+}
+
+nav {
+    font-family: NavFont;
+    color: aliceblue;
+}
+
+body {
+    background-image: url('./assets/Background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+}
