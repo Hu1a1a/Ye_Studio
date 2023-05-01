@@ -1,6 +1,6 @@
 # YK WEB STUDIO
 
-![foto de cabecera](https://hu1a1a.github.io/YK-Web-Studio/assets/YK%20WEB%20STUDIO.jpg)
+![foto de cabecera](https://hu1a1a.github.io/YK-Web-Studio/assets/YK%20WEB%20STUDIO.jpg){ width="800" height="600" style="display: block; margin: 0 auto" }
 
 ## Principal
 
