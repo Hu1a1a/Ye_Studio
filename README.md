@@ -20,8 +20,8 @@ Realizado mediante framework Angular y TypeScript.
 
 ***Founder Programador FrontEnd y BackEnd: Yang Ye***
 
-    **Contacto: +34 691 73 70 22**
+    Contacto: +34 691 73 70 22
 
 ***Founder Diseñador Gráfico: Albert Elkassem***
 
-    **Contacto: +34 699 04 04 63**
+    Contacto: +34 699 04 04 63

@@ -28,6 +28,7 @@ nav {
 }
 
 body {
+    background-color: #3032a1;
     background-image: url('./assets/Background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
