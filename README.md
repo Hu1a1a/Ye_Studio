@@ -10,6 +10,9 @@ Realizado mediante framework Angular y TypeScript.
 ## Founders
 
 Founder Programador FrontEnd y BackEnd: Yang Ye
+
     Contacto: +34691737022
+
 Founder Diseñador Gráfico: Albert Elkassem 
+
     Contacto: +34699040463
