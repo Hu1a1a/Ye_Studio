@@ -8,5 +8,10 @@ i {
   border-radius: 30px;
 }
 a {
-  color: #EC53B0;
+  color: #ec53b0;
+}
+
+.urlimg {
+  max-width: 100px;
+  max-height: 100%;
 }
