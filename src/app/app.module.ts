@@ -6,8 +6,6 @@ import { LayoutHeaderComponent } from './layout/layout-header/layout-header.comp
 import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
 import { HomeComponent } from './view/home/home.component';
 import { Error404Component } from './layout/404/404.component';
-import { PresentacionCNComponent } from './view/home/presentacion-CN/presentacion.component';
-import { PresentacionESComponent } from './view/home/presentacion-ES/presentacion.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +14,8 @@ import { PresentacionESComponent } from './view/home/presentacion-ES/presentacio
     LayoutFooterComponent,
     HomeComponent,
     Error404Component,
-    PresentacionCNComponent,
-    PresentacionESComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

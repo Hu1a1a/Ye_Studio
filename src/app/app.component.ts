@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title: string = 'YK_WEb_Studio';
+  title: string = 'Ye Studio';
 }

@@ -1,5 +1,5 @@
 {
-  "name": "yk-web-studio",
+  "name": "yk-studio",
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
