@@ -1,4 +1,4 @@
-# YK WEB STUDIO
+# Ye STUDIO
 
 ![foto de cabecera](https://hu1a1a.github.io/YK-Web-Studio/assets/YK%20WEB%20STUDIO.jpg)
 

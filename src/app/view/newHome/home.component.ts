@@ -6,7 +6,7 @@ import { TranslateService } from 'src/service/translate.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class Home2Component {
   constructor(public translate: TranslateService) { }
 
   Product: { Title: string, Description: string, src: string, url: string }[] = [

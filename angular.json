@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/YK-Web-Studio/",
+            "baseHref": "/Ye_Studio/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
