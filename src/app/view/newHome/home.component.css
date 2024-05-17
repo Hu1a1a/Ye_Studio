@@ -42,7 +42,8 @@
     width: 10%;
     max-width: 70px;
     cursor: pointer;
-    animation: hide 3s, fadeIn 3s 3s, wiggle1 1.5s 6.5s ease-in infinite;
+    animation: hide 3s 0s, fadeIn 3s 3s, wiggle1 1.5s 6.5s ease-in infinite;
+
     @media only screen and (max-width: 700px) {
         left: calc(50% - 5%);
     }
