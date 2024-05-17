@@ -29,7 +29,7 @@ export class HomeComponent {
       Title: "Villa Marina",
       Description: "a 20 metros del mar con piscina privada",
       src: "./assets/urlimg/Villa Marina.png",
-      url: "https://hu1a1a.github.io/VillaMarina_Front/",
+      url: "https://hu1a1a.github.io/VillaMarina/",
     },
   ]
 }
