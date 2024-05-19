@@ -10,14 +10,23 @@ import { oldHomeComponent } from './view/oldhome/home.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ContactoComponent } from './view/Contacto/app.component';
+import { NosotrosComponent } from './view/Nosotros/app.component';
+import { ServiciosComponent } from './view/Servicios/app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    HomeComponent,
+    ContactoComponent,
+    NosotrosComponent,
+    ServiciosComponent,
+
+    oldHomeComponent,
+
     LayoutHeaderComponent,
     LayoutFooterComponent,
-    HomeComponent,
-    oldHomeComponent,
     Error404Component,
   ],
   imports: [BrowserModule, AppRoutingModule,

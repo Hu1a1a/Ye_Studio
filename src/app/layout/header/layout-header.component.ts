@@ -21,5 +21,8 @@ export class LayoutHeaderComponent {
   href(item: any) {
     if (!item.Disabled) this.router.navigate([item.Router])
   }
-  doTranslate(inxx: string) { this.translate.use(inxx); }
+  doTranslate(language: string) {
+    localStorage.setItem('i18n', language)
+    this.translate.use(language);
+  }
 }

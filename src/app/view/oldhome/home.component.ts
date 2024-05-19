@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-homexx',
@@ -7,7 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.css'],
 })
 export class oldHomeComponent {
-  constructor(public translate: TranslateService) { }
 
   Product: { Title: string, Description: string, src: string, url: string }[] = [
     {
