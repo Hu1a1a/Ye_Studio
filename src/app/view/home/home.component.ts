@@ -32,4 +32,8 @@ export class HomeComponent {
       url: "https://hu1a1a.github.io/VillaMarina/",
     },
   ]
+  scrollDown() {
+    const element: any = document.getElementsByClassName('segon')[0]
+    element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+  }
 } 

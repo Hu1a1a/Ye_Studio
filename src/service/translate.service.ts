@@ -6,4 +6,5 @@ import { Injectable } from '@angular/core';
 
 export class TranslateService {
     translate: "CN" | "ES" = "ES"
+    
 }

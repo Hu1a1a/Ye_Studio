@@ -1,0 +1,31 @@
+i {
+  font-size: 50px;
+}
+
+.col {
+  margin: 5px;
+  padding: 25px;
+  background-color: #4d2db7;
+  border-radius: 30px;
+}
+
+a {
+  color: #ec53b0;
+  font-family: Allura;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 52px;
+  padding-bottom: 10px;
+  text-decoration: none;
+
+}
+
+.urlimg {
+  max-width: 300px;
+  max-height: 100px;
+}
+
+* {
+  font-family: Allura;
+  font-size: 25px;
+}

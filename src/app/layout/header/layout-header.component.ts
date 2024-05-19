@@ -13,9 +13,9 @@ export class LayoutHeaderComponent {
 
   Menu: { Name: string, Router: string, Disabled?: boolean }[] = [
     { Name: "Inicio", Router: "home" },
-    { Name: "Sobre nosotros", Router: "" },
-    { Name: "Servicios", Router: "" },
-    { Name: "Contacto", Router: "" },
+    { Name: "Sobre nosotros", Router: "nosotros" },
+    { Name: "Servicios", Router: "servicios" },
+    { Name: "Contacto", Router: "contacto" },
   ]
 
   href(item: any) {
