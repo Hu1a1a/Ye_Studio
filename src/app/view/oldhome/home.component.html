@@ -3,14 +3,13 @@
 		<div class="col">
 			<br>
 			<div class="row text-center">
-				<h2 *ngIf="translate.translate==='ES'">Estudio de Diseño:</h2>
-				<h2 *ngIf="translate.translate==='CN'">Ye网络设计工作室:</h2>
+				<h2>Estudio de Diseño:</h2>
+				<h2>Ye网络设计工作室:</h2>
 			</div>
 			<div class="row">
 				<div class="col-2"></div>
 				<div class="col">
-					<ul *ngIf="translate.translate==='ES'"
-						class="list-unstyled">
+					<ul class="list-unstyled">
 						<li class="mb-2">
 							- Diseño Gráfico de Páginas
 						</li>
@@ -22,8 +21,7 @@
 							- Desarrollo Backend
 						</li>
 					</ul>
-					<ul *ngIf="translate.translate==='CN'"
-						class="list-unstyled">
+					<ul class="list-unstyled">
 						<li class="mb-2">- 前端设计</li>
 						<li class="mb-2">- 后端设计</li>
 						<li class="mb-2">- 手机端设计</li>
@@ -31,11 +29,11 @@
 					</ul>
 				</div>
 			</div>
-			<span *ngIf="translate.translate==='ES'">
+			<span>
 				Adaptamos nuestros servicios a todas las necesidades de nuestros clientes para todo tipo de
 				proyectos.
 			</span>
-			<span *ngIf="translate.translate==='CN'">为我们的客户定制各种独家设计。</span>
+			<span>为我们的客户定制各种独家设计。</span>
 			<br>
 			<br>
 		</div>
@@ -44,20 +42,20 @@
 	<div class="row">
 		<div class="col text-center">
 			<br>
-			<h3 *ngIf="translate.translate==='ES'">
+			<h3>
 				Para obtener más información, contáctenos a través de WhatsApp:
 			</h3>
-			<h3 *ngIf="translate.translate==='CN'">更多详细信息请联系 WhatsApp:</h3>
+			<h3>更多详细信息请联系 WhatsApp:</h3>
 			<br>
 			<div class="row">
 				<h4>
 					Yang Ye
 					<br>
 				</h4>
-				<h5 *ngIf="translate.translate==='ES'">
+				<h5>
 					Fundador de YK Studio, Ingeniero Industrial y Programador Full-Stack.:
 				</h5>
-				<h5 *ngIf="translate.translate==='CN'">
+				<h5>
 					YK网络设计工作室创始人, 工业高级工程师 与 全栈工程师:
 				</h5>
 			</div>
@@ -89,18 +87,17 @@
 					Estrella Lizhang Jin
 					<br>
 				</h4>
-				<h5 *ngIf="translate.translate==='ES'">
+				<h5>
 					Colaborador principal de YK Studio, Diseñador Gráfico y mente artístico:
 				</h5>
-				<h5 *ngIf="translate.translate==='CN'">
+				<h5>
 					YK网络设计工作室合伙人 与 美术设计师:
 				</h5>
 			</div>
 		</div>
 	</div>
 	<br>
-	<div *ngIf="translate.translate==='ES'"
-		class="col">
+	<div class="col">
 		<br>
 		<h4>
 			Carta de Presentación
@@ -160,8 +157,7 @@
 		<br>
 		<br>
 	</div>
-	<div *ngIf="translate.translate==='CN'"
-		class="col">
+	<div class="col">
 		<h4>工作室简介</h4>
 		<br>
 		YK工作室是由一批从事一线开发及相关人员创建。立足于西班牙线上线下软件与网页开发,并面向欧洲进行线上软件定制开发。
@@ -206,14 +202,10 @@
 	<div class="row">
 		<div class="col">
 			<br>
-			<h3 *ngIf="translate.translate==='ES'"
-				class="text-center">
+			<h3 class="text-center">
 				Proyectos Realizados:
 			</h3>
-			<h3 *ngIf="translate.translate==='CN'"
-				class="text-center">
-				已开发项目陈列:
-			</h3>
+			<h3 class="text-center">已开发项目陈列:</h3>
 			<br>
 			<!-- Copy Part -->
 			<ng-container *ngFor="let item of Product">
@@ -230,10 +222,10 @@
 			</ng-container>
 
 			<!-- Copy Part -->
-			<span *ngIf="translate.translate==='ES'">
+			<span>
 				Entre otros proyectos confidenciales.
 			</span>
-			<span *ngIf="translate.translate==='CN'">部分非公开项目不公开。</span>
+			<span>部分非公开项目不公开。</span>
 			<br>
 			<br>
 		</div>

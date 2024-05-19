@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from 'src/service/translate.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout-header',
@@ -21,4 +21,5 @@ export class LayoutHeaderComponent {
   href(item: any) {
     if (!item.Disabled) this.router.navigate([item.Router])
   }
+  doTranslate(inxx: string) { this.translate.use(inxx); }
 }

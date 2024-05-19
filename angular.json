@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "YK_WEb_Studio:build:production"
+              "buildTarget": "YK_WEb_Studio:build:production"
             },
             "development": {
-              "browserTarget": "YK_WEb_Studio:build:development"
+              "buildTarget": "YK_WEb_Studio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "YK_WEb_Studio:build"
+            "buildTarget": "YK_WEb_Studio:build"
           }
         },
         "test": {

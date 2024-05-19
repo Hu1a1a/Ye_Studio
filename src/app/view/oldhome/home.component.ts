@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { TranslateService } from 'src/service/translate.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-homexx',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })

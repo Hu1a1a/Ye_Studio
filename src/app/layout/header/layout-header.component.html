@@ -28,18 +28,40 @@
 						aria-controls="navbarNavDropdown">
 						<a [ngClass]="router.url==='/'+item.Router?'active':''"
 							(click)="href(item)"
-							class="nav-link menu">
+							class="nav-link menu"
+							translate>
 							{{item.Name}}
 						</a>
 					</li>
 				</ng-container>
-				<li class="nav-item"
+				<li *ngIf="translate.currentLang!=='es'"
+					class="nav-item"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarNavDropdown"
 					aria-controls="navbarNavDropdown">
-					<a (click)="translate.translate=translate.translate==='ES'?'CN':'ES'"
+					<a (click)="doTranslate('es')"
 						class="nav-link menu">
-						{{translate.translate}}
+						ES
+					</a>
+				</li>
+				<li *ngIf="translate.currentLang!=='en'"
+					class="nav-item"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown">
+					<a (click)="doTranslate('en')"
+						class="nav-link menu">
+						EN
+					</a>
+				</li>
+				<li *ngIf="translate.currentLang!=='cn'"
+					class="nav-item"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown">
+					<a (click)="doTranslate('cn')"
+						class="nav-link menu">
+						中
 					</a>
 				</li>
 			</ul>
