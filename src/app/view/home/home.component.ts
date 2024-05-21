@@ -35,5 +35,4 @@ export class HomeComponent {
     const element: any = document.getElementsByClassName('segon')[0]
     element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
   }
-
 } 
