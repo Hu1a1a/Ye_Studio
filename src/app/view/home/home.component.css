@@ -38,69 +38,6 @@
     }
 }
 
-@keyframes fadetext {
-    0% {
-        transform: translate(-20rem, -120px);
-    }
-
-    100% {
-        transform: translate(0, -120px);
-    }
-}
-
-@keyframes hide {
-    0% {
-        display: none;
-    }
-
-    100% {
-        display: contents;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        transform: translateY(-15rem);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes wiggle1 {
-
-    0%,
-    7% {
-        transform: rotateZ(0);
-
-    }
-
-    15% {
-        transform: rotateZ(-13deg);
-    }
-
-    20% {
-        transform: rotateZ(9deg);
-    }
-
-    25% {
-        transform: rotateZ(-10deg);
-    }
-
-    30% {
-        transform: rotateZ(7deg);
-    }
-
-    35% {
-        transform: rotateZ(-2deg);
-    }
-
-    40%,
-    100% {
-        transform: rotateZ(0);
-    }
-}
 
 .first {
     height: 100vh;
@@ -109,14 +46,13 @@
 
 .segon {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background-color: white;
 
     .backg {
         position: absolute;
         width: 100%;
-        height: auto;
-        min-height: 55vh;
+        height: 55vh;
         object-fit: cover;
     }
 }
