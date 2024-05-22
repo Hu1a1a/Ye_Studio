@@ -2,7 +2,7 @@
     font-size: 42px;
     font-weight: 700;
     font-family: Inter;
-    color: black;
+    color: white;
     position: absolute;
     top: 50%;
     left: 0%;
@@ -13,4 +13,9 @@
         font-size: 36px;
     }
 
+}
+
+.contaiiner {
+    height: 100vh;
+    background-color: black;
 }
