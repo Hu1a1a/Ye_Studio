@@ -33,6 +33,6 @@ export class HomeComponent {
 
   scrollDown() {
     const element: any = document.getElementsByClassName('segon')[0]
-    element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
   }
 } 

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col text-center">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-12 col-md-6">
                     <a
                         class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
                         href="/"
@@ -10,9 +10,8 @@
                         <img
                             src="assets/new/logo.png"
                             alt="Logo"
-                            width="300"
                             class="d-inline-block align-text-top"
-                            style="margin-left: 10px;margin-right: 10px;"
+                            style="max-width: 80vw; width: 320px;margin-left: 10px;margin-right: 10px;"
                         >
                     </a>
                     <ul class="list-unstyled small">
@@ -22,39 +21,29 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-6 col-lg-3">
-                    <span>Construcción</span>
+                <div class="col-12 col-md-6">
                     <ul class="list-unstyled">
-                        <li>
-                            <a href="#/404">En construcción</a>
-                        </li>
-                        <li>
-                            <a href="#/404">En construcción</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <span>Construcción</span>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#/404">En construcción</a>
-                        </li>
-                        <li>
-                            <a href="#/404">En construcción</a>
-                        </li>
+                        <ng-container *ngFor="let item of Menu">
+                            <li
+                                class="nav-item"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavDropdown"
+                                aria-controls="navbarNavDropdown"
+                            >
+                                <a
+                                    [ngClass]="router.url==='/'+item.Router?'active':''"
+                                    (click)="href(item)"
+                                    class="nav-link menu"
+                                >
+                                    {{item.Name | translate}}
+                                </a>
+                            </li>
+                        </ng-container>
                     </ul>
                 </div>
             </div>
             <div class="row">
-                <div class="col text-center">
-                    <ul class="list-unstyled small">
-                        <li>
-                            Estudio de diseño web de pagina web y de programacion de FrontEnd y BackEnd para todas las
-                            necesidades del cliente.
-                        </li>
-                    </ul>
-                    Super-powered Ye Studio by ©2024.
-                </div>
+                <div class="col text-center">Super-powered Ye Studio by ©2024.</div>
             </div>
         </div>
     </div>

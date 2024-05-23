@@ -23,3 +23,16 @@ span {
   font-weight: 700;
   font-family: Inter;
 }
+
+.nav-item {
+  width: 50%;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a {
+  cursor: pointer;
+}

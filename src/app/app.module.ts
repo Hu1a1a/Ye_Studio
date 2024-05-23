@@ -17,14 +17,11 @@ import { ServiciosComponent } from './view/Servicios/app.component';
 @NgModule({
   declarations: [
     AppComponent,
-
     HomeComponent,
     ContactoComponent,
     NosotrosComponent,
     ServiciosComponent,
-
     oldHomeComponent,
-
     LayoutHeaderComponent,
     LayoutFooterComponent,
     Error404Component,
