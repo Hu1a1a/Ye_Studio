@@ -2,13 +2,15 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 100000;
+  padding: 0;
+
 }
 
 .fakenav {
   background-color: black;
   position: fixed;
   width: 100vw;
-  height: 84px;
+  height: 92px;
   opacity: 0.69;
   z-index: 99999;
 }
