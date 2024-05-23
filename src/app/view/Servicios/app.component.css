@@ -1,21 +1,15 @@
-.titulo {
+.contaiiner {
+    min-height: 100vh;
+    background-color: black;
     font-size: 42px;
     font-weight: 700;
     font-family: Inter;
     color: white;
-    position: absolute;
-    top: 50%;
-    left: 0%;
     padding: 0% 10%;
-    transform: translateY(-120px);
-
-    @media only screen and (max-width: 991px) {
-        font-size: 36px;
-    }
+    padding-bottom: 100px;
 
 }
 
-.contaiiner {
-    height: 100vh;
-    background-color: black;
+i {
+    color: white;
 }

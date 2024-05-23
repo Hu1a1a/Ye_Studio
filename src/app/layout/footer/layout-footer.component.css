@@ -9,13 +9,12 @@ footer {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  border: 10px;
+  border-top: 1px solid white;
 }
 
 * {
   color: white;
   align-content: center;
-
 }
 
 span {

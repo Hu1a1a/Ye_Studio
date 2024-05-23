@@ -12,7 +12,6 @@
     @media only screen and (max-width: 991px) {
         font-size: 36px;
     }
-
 }
 
 .background {
@@ -36,7 +35,6 @@
         left: calc(50% - 5%);
     }
 }
-
 
 .first {
     height: 100vh;
@@ -73,7 +71,6 @@
     @media only screen and (max-width: 350px) {
         font-size: 30px;
     }
-
 }
 
 .detalle {

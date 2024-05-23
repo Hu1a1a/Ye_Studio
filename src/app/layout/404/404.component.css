@@ -1,5 +1,4 @@
 /** Styles for the 403 Page **/
-
 .particle-error,
 .permission_denied,
 #tsparticles {
@@ -100,6 +99,7 @@
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.3;
   }
@@ -112,6 +112,7 @@
   top: 210px;
   animation: spin 4.5s infinite linear;
 }
+
 #astronaut2 {
   width: 43px;
   position: absolute;
@@ -119,6 +120,7 @@
   top: 380px;
   animation: spin 4.5s infinite linear;
 }
+
 #astronaut3 {
   width: 43px;
   position: absolute;
@@ -126,6 +128,7 @@
   top: 300px;
   animation: spin 4.5s infinite linear;
 }
+
 #astronaut4 {
   width: 43px;
   position: absolute;
@@ -133,6 +136,7 @@
   top: 600px;
   animation: spin 4.5s infinite linear;
 }
+
 #astronaut5 {
   width: 43px;
   position: absolute;
@@ -145,6 +149,7 @@
   0% {
     transform: rotateZ(0deg);
   }
+
   100% {
     transform: rotateZ(360deg);
   }
@@ -154,21 +159,25 @@
   .permission_denied h1 {
     font-size: 75px;
   }
+
   .permission_denied h3 {
     font-size: 16px;
     width: 200px;
     margin: 0 auto;
     line-height: 23px;
   }
+
   .permission_denied h3 span {
     width: 60px;
   }
+
   #astronaut {
     width: 35px;
     right: 40px;
     top: 170px;
   }
 }
+
 body div {
   width: 100vw;
   height: 100vh;
@@ -184,6 +193,7 @@ body div {
   0% {
     transform: translateY(3px);
   }
+
   100% {
     transform: translateY(-3px);
   }
