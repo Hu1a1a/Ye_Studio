@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LayoutHeaderComponent } from '../header/layout-header.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout-footer.component.css']
 })
 export class LayoutFooterComponent {
-  constructor( public router: Router) { }
+  constructor(public router: Router) { }
 
   Menu: { Name: string, Router: string, Disabled?: boolean }[] = [
     { Name: "Inicio", Router: "home" },

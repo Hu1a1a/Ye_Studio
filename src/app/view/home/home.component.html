@@ -1,5 +1,8 @@
 <div class="contaiiner">
-    <div class="first">
+    <div
+        class="first"
+        *ngIf="DisplayPortal"
+    >
         <img
             src="assets/new/background.png"
             class="background"
@@ -17,7 +20,10 @@
             alt
         >
     </div>
-    <div class="segon">
+    <div
+        class="segon"
+        *ngIf="DisplayHome"
+    >
         <div>
             <img
                 src="assets/new/computer.png"
@@ -96,3 +102,4 @@
         </div>
     </div>
 </div>
+<app-layout-footer *ngIf="DisplayHome"></app-layout-footer>

@@ -31,8 +31,17 @@ export class HomeComponent {
     },
   ]
 
+  DisplayHome: boolean = false
+  DisplayPortal: boolean = true
   scrollDown() {
-    const element: any = document.getElementsByClassName('segon')[0]
-    element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    this.DisplayHome = true
+    setTimeout(() => {
+      const element: any = document.getElementsByClassName('segon')[0]
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }, 100);
+    setTimeout(() => {
+      this.DisplayPortal = false
+    }, 1000);
+
   }
 } 

@@ -1,49 +1,84 @@
 <footer class="navbar navbar-light navbar-expand-lg bd-navbar sticky-top">
-    <div class="container">
-        <div class="col text-center">
-            <div class="row">
-                <div class="col-12 col-md-6">
+    <div class="col text-center">
+        <div class="row gris">
+            <div class="col-12 col-md-9">
+                <div
+                    class="row"
+                    style="justify-content: space-evenly;"
+                >
                     <a
                         class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
                         href="/"
                     >
                         <img
-                            src="assets/new/logo.png"
+                            src="assets/new/logo negro sin fondo.png"
                             alt="Logo"
                             class="d-inline-block align-text-top"
                             style="max-width: 80vw; width: 320px;margin-left: 10px;margin-right: 10px;"
                         >
                     </a>
-                    <ul class="list-unstyled small">
-                        <li>
-                            Estudio de diseño web de pagina web y de programacion de FrontEnd y BackEnd para todas las
-                            necesidades del cliente.
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-6">
-                    <ul class="list-unstyled">
-                        <ng-container *ngFor="let item of Menu">
-                            <li
-                                class="nav-item"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#navbarNavDropdown"
-                                aria-controls="navbarNavDropdown"
-                            >
-                                <a
-                                    [ngClass]="router.url==='/'+item.Router?'active':''"
-                                    (click)="href(item)"
-                                    class="nav-link menu"
-                                >
-                                    {{item.Name | translate}}
-                                </a>
-                            </li>
-                        </ng-container>
-                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=34691737022&text=Hola,%20tengo%20una%20consulta%20de%20proyecto%20para%20YK%20Web%20Studio.">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yang-y-48498815b/">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Hu1a1a/">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="mailto:yang.ye.1@hotmail.com">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col text-center">Super-powered Ye Studio by ©2024.</div>
+            <div class="col-12 col-md-3">
+                <span
+                    translate="Contacto"
+                    class="titulo"
+                ></span>
+                <br>
+                <span class="texto">+34 691 737 022</span>
+                <br>
+                <span class="texto">yang.ye.1&#64;hotmail.com</span>
+            </div>
+        </div>
+        <div
+            class="row gris"
+            style="padding-bottom: 10px;"
+        >
+            <div class="col text-center">
+                <span class="texto">
+                    Estudio de diseño web, desarrollo web y programación de FrontEnd y BackEnd para todas
+                    las necesidades del cliente.
+                </span>
+
+            </div>
+        </div>
+        <div
+            class="row"
+            style="padding-top: 10px;"
+        >
+            <div
+                class="col text-center"
+                class="texto"
+            >
+                Super-powered Ye Studio by ©2024.
+            </div>
+        </div>
+        <div
+            class="row"
+            style="padding-bottom: 10px;"
+        >
+            <div
+                class="col text-center"
+                class="texto"
+            >
+                <a href>Aviso legal</a>
+                |
+                <a href>Política de privacidad</a>
+                |
+                <a href>Política de cookies</a>
             </div>
         </div>
     </div>

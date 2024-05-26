@@ -10,17 +10,12 @@ footer {
   background-attachment: fixed;
   background-position: center;
   border-top: 1px solid white;
+  padding: 0;
 }
 
 * {
   color: white;
   align-content: center;
-}
-
-span {
-  font-size: 20px;
-  font-weight: 700;
-  font-family: Inter;
 }
 
 .nav-item {
@@ -34,4 +29,40 @@ ul {
 
 a {
   cursor: pointer;
+  width: auto;
+  text-decoration: none;
+}
+
+i {
+  font-size: 40px;
+
+}
+
+.gris {
+  background-color: #CDCDCD;
+  color: black;
+
+  i,
+  span {
+    color: black;
+  }
+}
+
+.col,
+.row {
+  padding: 0;
+  --bs-gutter-x: 0
+}
+
+.titulo {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: Inter;
+
+}
+
+.texto {
+  font-size: 14px;
+  font-family: Inter;
+
 }

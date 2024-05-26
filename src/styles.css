@@ -9,14 +9,15 @@
 }
 
 @keyframes hide {
-    0% {
+    from {
         display: none;
     }
 
-    100% {
+    to {
         display: contents;
     }
 }
+
 
 @keyframes fadeIn {
     from {
@@ -27,6 +28,8 @@
         transform: translateY(0);
     }
 }
+
+
 
 @keyframes wiggle1 {
 
@@ -60,4 +63,3 @@
         transform: rotateZ(0);
     }
 }
-

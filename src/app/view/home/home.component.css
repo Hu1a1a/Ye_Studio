@@ -4,7 +4,7 @@
     font-family: Inter;
     color: #ffffff;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0%;
     padding: 0% 10%;
     animation: fadetext 3s;
@@ -62,7 +62,7 @@
     top: 150px;
     left: 0%;
     padding: 0% 10%;
-    animation: fadetext 3s;
+    animation: fadein 3s;
 
     @media only screen and (max-width: 675px) {
         font-size: 36px;
@@ -73,17 +73,30 @@
     }
 }
 
+@keyframes fadeout {
+    from {
+        transform: translateY(35rem);
+    }
+
+    to {
+        transform: translateY(-50px);
+    }
+}
+
+
 .detalle {
-    top: 400px;
     height: 60%;
     width: 100%;
+
 
     .row {
         --bs-gutter-x: 0;
         justify-content: space-evenly;
+
     }
 
     .place {
+
         background-color: white;
         width: 300px;
         min-width: 40%;
@@ -95,6 +108,7 @@
         flex-direction: column;
         align-items: center;
         transform: translateY(-50px);
+        animation: fadeout 2.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 
         @media only screen and (max-width: 675px) {
             width: 250px;
