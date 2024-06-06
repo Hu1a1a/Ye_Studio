@@ -1,0 +1,38 @@
+<div class="contaiiner">
+    <div style="height: 100px;"></div>
+    <div class="container1">
+        <span class="titulo1">
+            <span translate="PROYECTOS REALIZADOS"></span>
+        </span>
+        <img
+            src="assets/new/contacto.png"
+            alt
+            class="backg"
+        >
+    </div>
+    <div class="container2">
+        <span
+            class="titulo2"
+            translate="Proyectos que hemos realizado"
+        >
+        </span>
+        <div class="row">
+            <div
+                class="col-12 col-md-6"
+                *ngFor="let Proyecto of Proyectos"
+            >
+                <img
+                class="proyect"
+                    [src]="Proyecto.img"
+                    [alt]="Proyecto.name"
+                    (click)="Link(Proyecto.url)"
+                >
+            </div>
+        </div>
+        <span
+        class="titulo3"
+        translate="Entre otros proyectos confidenciales."
+    >
+    </span>
+    </div>
+</div>

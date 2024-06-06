@@ -1,6 +1,7 @@
 {
     "Inicio": "Home",
-    "Sobre nosotros": "About us",
+    "Nosotros": "About us",
+    "Proyectos": "Projects",
     "Servicios": "Services",
     "Contacto": "Contact",
     "Página en construcción!": "Web page in construction!",
@@ -26,5 +27,8 @@
     "Super-powered Ye Studio by ©2024.": "Super-powered Ye Studio by ©2024.",
     "Aviso legal": "Legal warning",
     "Política de privacidad": "Privacy Policy",
-    "Política de cookies": "Cookies policy"
+    "Política de cookies": "Cookies policy",
+    "PROYECTOS REALIZADOS": "FULFILLED PROJECTS",
+    "Proyectos que hemos realizado": "Projects we have done",
+    "Entre otros proyectos confidenciales.": "Among other confidential projects."
 }

@@ -13,7 +13,8 @@ export class LayoutHeaderComponent {
 
   Menu: { Name: string, Router: string, Disabled?: boolean }[] = [
     { Name: "Inicio", Router: "home" },
-    { Name: "Sobre nosotros", Router: "nosotros" },
+    { Name: "Nosotros", Router: "nosotros" },
+    { Name: "Proyectos", Router: "proyectos" },
     { Name: "Servicios", Router: "servicios" },
     { Name: "Contacto", Router: "contacto" },
   ]

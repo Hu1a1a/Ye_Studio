@@ -13,6 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactoComponent } from './view/Contacto/app.component';
 import { NosotrosComponent } from './view/Nosotros/app.component';
 import { ServiciosComponent } from './view/Servicios/app.component';
+import { ProyectosComponente } from './view/Proyectos/app.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ServiciosComponent } from './view/Servicios/app.component';
     NosotrosComponent,
     ServiciosComponent,
     oldHomeComponent,
+    ProyectosComponente,
     LayoutHeaderComponent,
     LayoutFooterComponent,
     Error404Component,

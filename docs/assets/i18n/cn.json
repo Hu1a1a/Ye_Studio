@@ -1,6 +1,7 @@
 {
     "Inicio": "主页",
-    "Sobre nosotros": "关于我们",
+    "Nosotros": "关于我们",
+    "Proyectos": "项目",
     "Servicios": "服务",
     "Contacto": "联系方式",
     "Página en construcción!": "正在建设中!",
@@ -26,5 +27,8 @@
     "Super-powered Ye Studio by ©2024.": "Super-powered Ye Studio by ©2024.",
     "Aviso legal": "服务条款",
     "Política de privacidad": "隐私政策",
-    "Política de cookies": "Cookie 政策"
+    "Política de cookies": "Cookie 政策",
+    "PROYECTOS REALIZADOS": "已完成的项目",
+    "Proyectos que hemos realizado": "我们完成的项目",
+    "Entre otros proyectos confidenciales.": "与其他未公开的项目。"
 }

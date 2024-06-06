@@ -1,6 +1,7 @@
 {
     "Inicio": "Inicio",
-    "Sobre nosotros": "Sobre nosotros",
+    "Nosotros": "Nosotros",
+    "Proyectos": "Proyectos",
     "Servicios": "Servicios",
     "Contacto": "Contacto",
     "Página en construcción!": "Página en construcción!",
@@ -20,11 +21,15 @@
     "CoFundador de Ye Studio, Diseñador Gráfico y mente artístico:": "CoFundador de Ye Studio, Diseñador Gráfico y mente artístico:",
     "Estamos aquí para ayudarte": "Estamos aquí para ayudarte",
     "Si tienes preguntas, dudas o algún proyecto en mente, no dudes en ponerte en contacto con nosotros.": "Si tienes preguntas, dudas o algún proyecto en mente, no dudes en ponerte en contacto con nosotros.",
-        "¿NECESITAS ALGO?": "¿NECESITAS ALGO?",
-        "CONTÁCTANOS": "CONTÁCTANOS",
+    "¿NECESITAS ALGO?": "¿NECESITAS ALGO?",
+    "CONTÁCTANOS": "CONTÁCTANOS",
     "Estudio de diseño web, desarrollo web y programación de FrontEnd y BackEnd para todas las necesidades del cliente.": "Estudio de diseño web, desarrollo web y programación de FrontEnd y BackEnd para todas las necesidades del cliente.",
     "Super-powered Ye Studio by ©2024.": "Super-powered Ye Studio by ©2024.",
     "Aviso legal": "Aviso legal",
     "Política de privacidad": "Política de privacidad",
-    "Política de cookies": "Política de cookies"
+    "Política de cookies": "Política de cookies",
+    "PROYECTOS REALIZADOS": "PROYECTOS REALIZADOS",
+    "Proyectos que hemos realizado": "Proyectos que hemos realizado",
+    "Entre otros proyectos confidenciales.":"Entre otros proyectos confidenciales."
+
 }
