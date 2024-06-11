@@ -5,11 +5,19 @@ nav {
   padding: 0;
 }
 
+.navbar-brand {
+  margin: auto;
+  padding: 0px 25px;
+  @media only screen and (min-width: 980px) {
+    padding: 0px 100px;
+  }
+}
+
 .fakenav {
   background-color: black;
   position: fixed;
   width: 100vw;
-  height: 92px;
+  height: 100px;
   opacity: 0.69;
   z-index: 99999;
 }

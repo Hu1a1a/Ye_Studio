@@ -1,99 +1,72 @@
 <nav class="navbar navbar-expand-lg">
-    <div
-        class="container-fluid"
-        style="padding: 0;"
-    >
-        <a
-            class="navbar-brand"
-            href="#/"
-            style="margin: auto;"
-        >
-            <img
-                src="assets/new/logo corto.png"
-                style="height: 100px;"
-            >
-        </a>
-        <div>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span
-                    class="navbar-toggler-icon"
-                    style="filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(234deg) brightness(104%) contrast(103%);"
-                ></span>
-            </button>
-        </div>
-        <div
-            class="collapse navbar-collapse"
-            id="navbarNavDropdown"
-        >
-            <ul class="navbar-nav">
-                <ng-container *ngFor="let item of Menu">
-                    <li
-                        class="nav-item"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown"
-                    >
-                        <a
-                            [ngClass]="router.url==='/'+item.Router?'active':''"
-                            (click)="href(item)"
-                            class="nav-link menu"
-                        >
-                            {{item.Name | translate}}
-                        </a>
-                    </li>
-                </ng-container>
-                <li
-                    *ngIf="translate.currentLang!=='es'"
-                    class="nav-item"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                >
-                    <a
-                        (click)="doTranslate('es')"
-                        class="nav-link menu"
-                        translate="ES"
-                    >
-                    </a>
-                </li>
-                <li
-                    *ngIf="translate.currentLang!=='en'"
-                    class="nav-item"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                >
-                    <a
-                        (click)="doTranslate('en')"
-                        class="nav-link menu"
-                        translate="EN"
-                    >
-                    </a>
-                </li>
-                <li
-                    *ngIf="translate.currentLang!=='cn'"
-                    class="nav-item"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                >
-                    <a
-                        (click)="doTranslate('cn')"
-                        class="nav-link menu"
-                        translate="CN"
-                    >
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+	<div class="container-fluid"
+		style="padding: 0;">
+		<a class="navbar-brand"
+			href="#/"
+			>
+			<img src="assets/new/logo corto.png"
+				style="height: 100px;">
+		</a>
+		<div>
+			<button class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarNavDropdown"
+				aria-controls="navbarNavDropdown"
+				aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"
+					style="filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(234deg) brightness(104%) contrast(103%);"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="navbarNavDropdown"
+			style="justify-content: flex-end;">
+			<ul class="navbar-nav">
+				<ng-container *ngFor="let item of Menu">
+					<li class="nav-item"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNavDropdown"
+						aria-controls="navbarNavDropdown">
+						<a [ngClass]="router.url==='/'+item.Router?'active':''"
+							(click)="href(item)"
+							class="nav-link menu">
+							{{item.Name | translate}}
+						</a>
+					</li>
+				</ng-container>
+				<li *ngIf="translate.currentLang!=='es'"
+					class="nav-item"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown">
+					<a (click)="doTranslate('es')"
+						class="nav-link menu"
+						translate="ES">
+					</a>
+				</li>
+				<li *ngIf="translate.currentLang!=='en'"
+					class="nav-item"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown">
+					<a (click)="doTranslate('en')"
+						class="nav-link menu"
+						translate="EN">
+					</a>
+				</li>
+				<li *ngIf="translate.currentLang!=='cn'"
+					class="nav-item"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown">
+					<a (click)="doTranslate('cn')"
+						class="nav-link menu"
+						translate="CN">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
 <div class="fakenav"></div>
