@@ -8,7 +8,7 @@ import { TranslateService } from "@ngx-translate/core";
 })
 export class AppComponent {
   title: string = 'Ye Studio';
-  constructor(private translate: TranslateService, public router: Router) {
+  constructor(public translate: TranslateService, public router: Router) {
     const i = localStorage.getItem('i18n')
     translate.setDefaultLang('es');
     i ? translate.use(i) : translate.use('es')
