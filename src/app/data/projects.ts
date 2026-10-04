@@ -741,7 +741,7 @@ export const PROJECTS: Project[] = [
     client: 'Sandberg Estates',
     sector: { es: 'Inmobiliaria', en: 'Real estate' },
     period: since(2024),
-    role: { es: 'Desarrollo web (Angular)', en: 'Web development (Angular)' },
+    role: { es: 'Consultor IT', en: 'IT consultant' },
     summary: {
       es: 'Portal de propiedades en Angular con renderizado en servidor, cinco idiomas, varias monedas y fichas sincronizadas con el CRM.',
       en: 'Angular property portal with server-side rendering, five languages, several currencies and listings synced from the CRM.',
@@ -849,7 +849,7 @@ export const PROJECTS: Project[] = [
     client: 'WHY U ON?',
     sector: { es: 'Apps y medios digitales', en: 'Apps and digital media' },
     period: year('2023'),
-    role: { es: 'Desarrollo web (Angular)', en: 'Web development (Angular)' },
+    role: { es: 'Consultor IT', en: 'IT consultant' },
     summary: {
       es: 'Web de presentación de una app que reúne el contenido de cada creador (Twitch, YouTube…) en un único perfil, con enlaces a la web app y a iOS y Android.',
       en: 'Landing page for an app that gathers each creator\'s content (Twitch, YouTube…) in a single profile, linking to the web app and iOS and Android.',
