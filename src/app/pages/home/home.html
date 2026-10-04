@@ -1,0 +1,92 @@
+<app-hero />
+
+<section class="sheet section" aria-labelledby="projects-title">
+  <div class="page">
+    <header class="section-head">
+      <h2 id="projects-title">{{ i18n.t(ui.home.projectsTitle) }}</h2>
+      <p>{{ i18n.t(ui.home.projectsLead) }}</p>
+    </header>
+    <div class="cards">
+      @for (project of featured; track project.slug) {
+        <app-sheet-card [project]="project" />
+      }
+    </div>
+    <p class="more">
+      <a routerLink="/proyectos" class="link-arrow">{{ allProjects() }}</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="services-title">
+  <div class="page">
+    <header class="section-head">
+      <h2 id="services-title">{{ i18n.t(ui.home.servicesTitle) }}</h2>
+      <p>{{ i18n.t(ui.home.servicesLead) }}</p>
+    </header>
+    <div class="table-wrap">
+      <table class="tech-table bom">
+        <caption class="visually-hidden">{{ i18n.t(ui.home.servicesTitle) }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">{{ i18n.t(ui.bom.pos) }}</th>
+            <th scope="col">{{ i18n.t(ui.bom.service) }}</th>
+            <th scope="col" class="col-includes">{{ i18n.t(ui.bom.includes) }}</th>
+            <th scope="col">{{ i18n.t(ui.bom.lead) }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (s of services; track s.slug; let i = $index) {
+            <tr [attr.data-layer]="s.layer">
+              <td class="num pos">{{ i + 1 }}</td>
+              <td class="name">
+                <span class="layer-dot"></span>
+                <a routerLink="/servicios" [fragment]="s.slug">{{ i18n.t(s.title) }}</a>
+                <span class="short muted">{{ i18n.t(s.short) }}</span>
+              </td>
+              <td class="col-includes muted">{{ i18n.t(s.short) }}</td>
+              <td class="num">{{ leadTime(s) }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="more">
+      <a routerLink="/servicios" class="link-arrow">{{ i18n.t(ui.home.allServices) }}</a>
+    </p>
+  </div>
+</section>
+
+<section class="sheet section" aria-labelledby="process-title">
+  <div class="page">
+    <header class="section-head">
+      <h2 id="process-title">{{ i18n.t(ui.home.processTitle) }}</h2>
+    </header>
+    <ol class="process">
+      @for (step of process; track $index) {
+        <li>
+          <span class="step-no" aria-hidden="true">{{ $index + 1 }}</span>
+          <h3>{{ i18n.t(step.title) }}</h3>
+          <p>{{ i18n.t(step.text) }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-label="{{ i18n.t(ui.home.reviewsTitle) }}">
+  <div class="page split">
+    <div>
+      <h2 class="split-title">{{ i18n.t(ui.home.reviewsTitle) }}</h2>
+      <app-reviews />
+    </div>
+    <div>
+      <h2 class="split-title">{{ i18n.t(ui.home.revisionsTitle) }}</h2>
+      <app-revision-table />
+      <p class="more">
+        <a routerLink="/sobre-mi" class="link-arrow">{{ i18n.t(ui.nav.about) }}</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<app-cta-band />

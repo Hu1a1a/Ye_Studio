@@ -1,0 +1,105 @@
+<section class="sheet section" aria-labelledby="contact-title">
+  <div class="page">
+    <header class="section-head">
+      <h1 id="contact-title">{{ i18n.t(ui.contact.title) }}</h1>
+      <p>{{ i18n.t(ui.contact.lead) }}</p>
+    </header>
+
+    <div class="layout">
+      <form class="order" (submit)="$event.preventDefault(); sendEmail()" novalidate>
+        <div class="order-head">
+          <h2>{{ i18n.t(ui.contact.formTitle) }}</h2>
+          <p class="muted">{{ i18n.t(ui.contact.formLead) }}</p>
+        </div>
+
+        <div class="fields">
+          <label class="field">
+            <span>{{ i18n.t(ui.contact.name) }}</span>
+            <input type="text" name="name" autocomplete="name" [value]="name()" (input)="name.set(value($event))" />
+          </label>
+          <label class="field">
+            <span>{{ i18n.t(ui.contact.company) }}</span>
+            <input
+              type="text"
+              name="company"
+              autocomplete="organization"
+              [value]="company()"
+              (input)="company.set(value($event))"
+            />
+          </label>
+          <label class="field">
+            <span>{{ i18n.t(ui.contact.type) }}</span>
+            <select name="type" (change)="type.set(value($event))">
+              @for (s of services; track s.slug) {
+                <option [value]="s.slug" [selected]="type() === s.slug">{{ i18n.t(s.title) }}</option>
+              }
+              <option value="other" [selected]="type() === 'other'">{{ i18n.t(ui.contact.other) }}</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>{{ i18n.t(ui.contact.timeline) }}</span>
+            <select name="timeline" (change)="timeline.set(+value($event))">
+              @for (t of ui.contact.timelines; track $index) {
+                <option [value]="$index" [selected]="timeline() === $index">{{ i18n.t(t) }}</option>
+              }
+            </select>
+          </label>
+          <label class="field wide">
+            <span>{{ i18n.t(ui.contact.message) }}</span>
+            <textarea
+              #messageField
+              name="message"
+              rows="6"
+              required
+              [attr.aria-invalid]="showError() ? 'true' : null"
+              aria-describedby="message-hint message-error"
+              [value]="message()"
+              (input)="onMessage(value($event))"
+            ></textarea>
+            <small id="message-hint" class="muted">{{ i18n.t(ui.contact.messageHint) }}</small>
+            <small id="message-error" class="error" aria-live="polite">
+              @if (showError()) {
+                {{ i18n.t(ui.contact.messageRequired) }}
+              }
+            </small>
+          </label>
+        </div>
+
+        <div class="send">
+          <button type="submit" class="btn btn-primary">{{ i18n.t(ui.contact.sendEmail) }}</button>
+          <button type="button" class="btn btn-ghost" (click)="sendWhatsapp()">{{ i18n.t(ui.contact.sendWhatsapp) }}</button>
+          <button type="button" class="btn-text" (click)="copy()">
+            {{ copied() ? i18n.t(ui.contact.copied) : i18n.t(ui.contact.copy) }}
+          </button>
+          <span class="visually-hidden" aria-live="polite">{{ copied() ? i18n.t(ui.contact.copied) : '' }}</span>
+        </div>
+      </form>
+
+      <aside class="direct">
+        <h2>{{ i18n.t(ui.contact.direct) }}</h2>
+        <div class="tb channels">
+          <a [href]="'mailto:' + profile.email">
+            <span class="tb-label">Email</span>
+            <span class="tb-value">{{ profile.email }}</span>
+          </a>
+          <a [href]="'https://wa.me/' + profile.whatsapp" target="_blank" rel="noopener">
+            <span class="tb-label">WhatsApp</span>
+            <span class="tb-value">{{ profile.phone }}</span>
+          </a>
+          <a [href]="'tel:' + profile.phone.replaceAll(' ', '')">
+            <span class="tb-label">{{ i18n.t(ui.contact.phone) }}</span>
+            <span class="tb-value">{{ profile.phone }}</span>
+          </a>
+        </div>
+
+        <h3>{{ i18n.t(ui.contact.profiles) }}</h3>
+        <ul class="profiles">
+          <li><a [href]="profile.links.linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a [href]="profile.links.malt" target="_blank" rel="noopener">Malt</a></li>
+          <li><a [href]="profile.links.fiverr" target="_blank" rel="noopener">Fiverr</a></li>
+          <li><a [href]="profile.links.github" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+@if (project(); as p) {
+  <article class="sheet section" [attr.data-layer]="p.layers[0]">
+    <div class="page">
+      <nav class="crumbs" [attr.aria-label]="i18n.t(ui.projects.title)">
+        <a routerLink="/proyectos">{{ i18n.t(ui.projects.back) }}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ i18n.t(ui.block.sheet) }} {{ sheet() }}</span>
+      </nav>
+
+      <header class="head">
+        <ul class="layer-names">
+          @for (layer of p.layers; track layer) {
+            <li [attr.data-layer]="layer"><span class="layer-dot"></span>{{ i18n.t(layers[layer].name) }}</li>
+          }
+        </ul>
+        <h1>{{ i18n.t(p.title) }}</h1>
+        <p class="lead">{{ i18n.t(p.summary) }}</p>
+      </header>
+
+      <div class="layout">
+        <div class="main">
+          <figure class="frame" [class.is-photo]="!!p.image">
+            @if (p.image) {
+              <img
+                [src]="'img/projects/' + p.image"
+                [alt]="i18n.t(ui.projects.screenshot) + ': ' + (p.client ?? i18n.t(p.title))"
+                width="1280"
+                height="800"
+              />
+            } @else if (p.diagram) {
+              <app-schematic
+                [diagram]="p.diagram"
+                [title]="i18n.t(ui.projects.architecture) + ': ' + i18n.t(p.title)"
+              />
+            }
+          </figure>
+
+          @if (p.metrics.length) {
+            <dl class="metrics">
+              @for (m of p.metrics; track m.value) {
+                <div>
+                  <dt>{{ i18n.t(m.label) }}</dt>
+                  <dd>{{ m.value }}</dd>
+                </div>
+              }
+            </dl>
+          }
+
+          <section class="block">
+            <h2>{{ i18n.t(ui.projects.problem) }}</h2>
+            <p>{{ i18n.t(p.problem) }}</p>
+          </section>
+
+          <section class="block">
+            <h2>{{ i18n.t(ui.projects.built) }}</h2>
+            <ul class="ticks">
+              @for (item of p.built; track $index) {
+                <li>{{ i18n.t(item) }}</li>
+              }
+            </ul>
+          </section>
+
+          @if (p.image && p.diagram) {
+            <section class="block">
+              <h2>{{ i18n.t(ui.projects.architecture) }}</h2>
+              <div class="frame">
+                <app-schematic
+                  [diagram]="p.diagram"
+                  [title]="i18n.t(ui.projects.architecture) + ': ' + i18n.t(p.title)"
+                />
+              </div>
+            </section>
+          }
+
+          <section class="block">
+            <h2>{{ i18n.t(ui.projects.technical) }}</h2>
+            <ol class="notes">
+              @for (item of p.technical; track $index) {
+                <li>{{ i18n.t(item) }}</li>
+              }
+            </ol>
+          </section>
+        </div>
+
+        <aside class="side">
+          <div class="tb side-tb">
+            <div>
+              <span class="tb-label">{{ i18n.t(ui.block.client) }}</span>
+              <span class="tb-value">{{ p.client ?? i18n.t(ui.projects.confidential) }}</span>
+            </div>
+            <div>
+              <span class="tb-label">{{ i18n.t(ui.block.sector) }}</span>
+              <span class="tb-value">{{ i18n.t(p.sector) }}</span>
+            </div>
+            <div class="pair">
+              <div>
+                <span class="tb-label">{{ i18n.t(ui.block.period) }}</span>
+                <span class="tb-value">{{ i18n.t(p.period) }}</span>
+              </div>
+              <div>
+                <span class="tb-label">{{ i18n.t(ui.block.sheet) }}</span>
+                <span class="tb-value mono">{{ sheet() }} / {{ total }}</span>
+              </div>
+            </div>
+            <div>
+              <span class="tb-label">{{ i18n.t(ui.block.role) }}</span>
+              <span class="tb-value">{{ i18n.t(p.role) }}</span>
+            </div>
+            <div>
+              <span class="tb-label">{{ i18n.t(ui.block.stack) }}</span>
+              <ul class="chip-list">
+                @for (tech of p.stack; track tech) {
+                  <li>{{ tech }}</li>
+                }
+              </ul>
+            </div>
+            @if (p.links?.length) {
+              <div>
+                <span class="tb-label">{{ i18n.t(ui.projects.links) }}</span>
+                @for (link of p.links; track link.url) {
+                  <a class="tb-value" [href]="link.url" target="_blank" rel="noopener">{{ i18n.t(link.label) }}</a>
+                }
+              </div>
+            }
+          </div>
+
+          <div class="similar">
+            <p class="similar-title">{{ i18n.t(ui.projects.similar) }}</p>
+            @for (s of services(); track s.slug) {
+              <a routerLink="/servicios" [fragment]="s.slug" [attr.data-layer]="s.layer">
+                <span class="layer-dot"></span>{{ i18n.t(s.title) }}
+              </a>
+            }
+            <a routerLink="/contacto" [queryParams]="{ tipo: services()[0]?.slug ?? null }" class="btn btn-primary">
+              {{ i18n.t(ui.nav.cta) }}
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="pager" [attr.aria-label]="i18n.t(ui.projects.title)">
+        @if (prev(); as prev) {
+          <a [routerLink]="['/proyectos', prev.slug]" class="prev">
+            <span class="tb-label">{{ i18n.t(ui.projects.prev) }}</span>
+            <span>{{ i18n.t(prev.title) }}</span>
+          </a>
+        }
+        @if (next(); as next) {
+          <a [routerLink]="['/proyectos', next.slug]" class="next">
+            <span class="tb-label">{{ i18n.t(ui.projects.next) }}</span>
+            <span>{{ i18n.t(next.title) }}</span>
+          </a>
+        }
+      </nav>
+    </div>
+  </article>
+  <app-cta-band />
+}

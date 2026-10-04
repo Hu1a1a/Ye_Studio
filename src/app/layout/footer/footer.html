@@ -1,0 +1,41 @@
+<footer class="footer">
+  <div class="page">
+    <div class="title-block">
+      <div class="tb-cell tb-sign">
+        <img src="img/firma.png" alt="Ye Studio" width="230" height="92" loading="lazy" />
+        <span class="tb-label">{{ i18n.t(ui.footer.drawnBy) }}</span>
+        <span class="tb-value">{{ profile.name }}</span>
+      </div>
+      <div class="tb-cell tb-title">
+        <span class="tb-label">{{ i18n.t(ui.footer.title) }}</span>
+        <span class="tb-value">{{ i18n.t(ui.footer.titleValue) }}</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">{{ i18n.t(ui.footer.scale) }}</span>
+        <span class="tb-value mono">1:1</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">{{ i18n.t(ui.footer.rev) }}</span>
+        <span class="tb-value mono">{{ revision }}</span>
+      </div>
+      <div class="tb-cell tb-contact">
+        <span class="tb-label">{{ i18n.t(ui.nav.contact) }}</span>
+        <span class="tb-value">
+          <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+          <a [href]="'tel:' + profile.phone.replaceAll(' ', '')">{{ profile.phone }}</a>
+        </span>
+      </div>
+      <div class="tb-cell tb-links footer-links">
+        <a [href]="profile.links.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a [href]="profile.links.github" target="_blank" rel="noopener">GitHub</a>
+        <a [href]="profile.links.malt" target="_blank" rel="noopener">Malt</a>
+        <a [href]="profile.links.fiverr" target="_blank" rel="noopener">Fiverr</a>
+        <a routerLink="/contacto">{{ i18n.t(ui.nav.cta) }}</a>
+      </div>
+    </div>
+    <p class="colophon">
+      © {{ year }} {{ profile.studio }} · {{ profile.name }}. {{ i18n.t(ui.footer.built) }}
+      <a [href]="profile.links.repo" target="_blank" rel="noopener">{{ i18n.t(ui.footer.source) }}</a>.
+    </p>
+  </div>
+</footer>

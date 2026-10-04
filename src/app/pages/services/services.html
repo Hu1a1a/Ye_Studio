@@ -1,0 +1,107 @@
+<section class="sheet section" aria-labelledby="services-title">
+  <div class="page">
+    <header class="section-head">
+      <h1 id="services-title">{{ i18n.t(ui.services.title) }}</h1>
+      <p>{{ i18n.t(ui.services.lead) }}</p>
+    </header>
+
+    <nav class="index" [attr.aria-label]="i18n.t(ui.services.title)">
+      <ol>
+        @for (s of services; track s.slug) {
+          <li [attr.data-layer]="s.layer">
+            <a [routerLink]="[]" [fragment]="s.slug"><span class="layer-dot"></span>{{ i18n.t(s.title) }}</a>
+          </li>
+        }
+      </ol>
+    </nav>
+
+    @for (s of services; track s.slug; let i = $index) {
+      <article class="service" [id]="s.slug" [attr.data-layer]="s.layer" [attr.aria-labelledby]="s.slug + '-title'">
+        <div class="service-head">
+          <span class="pos" aria-hidden="true">{{ i + 1 }}</span>
+          <h2 [id]="s.slug + '-title'">{{ i18n.t(s.title) }}</h2>
+        </div>
+
+        <div class="service-body">
+          <div class="col">
+            <p class="pitch">{{ i18n.t(s.pitch) }}</p>
+            <h3>{{ i18n.t(ui.services.includes) }}</h3>
+            <ul class="ticks">
+              @for (item of s.includes; track $index) {
+                <li>{{ i18n.t(item) }}</li>
+              }
+            </ul>
+            <ul class="chip-list stack">
+              @for (tech of s.stack; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+          </div>
+
+          <div class="col">
+            @if (s.tiers) {
+              <h3>{{ i18n.t(ui.services.packages) }}</h3>
+              <div class="table-wrap">
+                <table class="tech-table">
+                  <tbody>
+                    @for (t of s.tiers; track $index) {
+                      <tr>
+                        <th scope="row">{{ i18n.t(t.name) }}</th>
+                        <td>{{ i18n.t(t.scope) }}</td>
+                        <td class="num">{{ days(t.days) }}</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            }
+
+            @if (s.faq.length) {
+              <h3>{{ i18n.t(ui.services.faq) }}</h3>
+              <div class="faq">
+                @for (f of s.faq; track $index) {
+                  <details>
+                    <summary>{{ i18n.t(f.q) }}</summary>
+                    <p>{{ i18n.t(f.a) }}</p>
+                  </details>
+                }
+              </div>
+            }
+
+            <div class="foot">
+              @if (s.proof.length) {
+                <p class="proof">
+                  <span class="muted">{{ i18n.t(ui.services.proof) }}</span>
+                  @for (slug of s.proof; track slug) {
+                    @if (project(slug); as p) {
+                      <a [routerLink]="['/proyectos', p.slug]">{{ i18n.t(p.title) }}</a>
+                    }
+                  }
+                </p>
+              }
+              <a routerLink="/contacto" [queryParams]="{ tipo: s.slug }" class="btn btn-primary">
+                {{ i18n.t(ui.services.ask) }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section" aria-labelledby="models-title">
+  <div class="page">
+    <h2 id="models-title" class="models-title">{{ i18n.t(ui.services.modelsTitle) }}</h2>
+    <div class="models">
+      @for (m of models; track $index) {
+        <div>
+          <h3>{{ i18n.t(m.title) }}</h3>
+          <p>{{ i18n.t(m.text) }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-band />

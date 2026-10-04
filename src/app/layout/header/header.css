@@ -1,0 +1,173 @@
+/* La cabecera es la «barra de herramientas» del CAD: siempre en el color del espacio modelo. */
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: block;
+}
+
+.bar {
+  background: var(--model);
+  color: var(--model-ink);
+  border-bottom: 1px solid var(--model-line);
+}
+
+.bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: var(--l-ai);
+  stroke-width: 1.5;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding-block: 0.4rem;
+  color: var(--model-dim);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--model-ink);
+}
+
+.nav-links a.is-active {
+  color: var(--model-ink);
+  border-bottom-color: var(--l-erp);
+}
+
+.lang {
+  display: inline-flex;
+  border: 1px solid var(--model-line);
+  border-radius: var(--radius);
+}
+
+.lang button {
+  min-width: 2.5rem;
+  min-height: 2.25rem;
+  border: 0;
+  background: transparent;
+  color: var(--model-dim);
+  font: 500 0.82rem / 1 var(--font-mono);
+  cursor: pointer;
+}
+
+.lang button[aria-pressed='true'] {
+  background: var(--model-2);
+  color: var(--model-ink);
+  box-shadow: inset 0 -2px 0 var(--l-erp);
+}
+
+.nav-cta {
+  min-height: 2.5rem;
+}
+
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 62rem) {
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 2.75rem;
+    padding: 0 0.85rem;
+    border: 1px solid var(--model-line);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--model-ink);
+    font: 500 var(--fs-sm) / 1 var(--font-text);
+    cursor: pointer;
+  }
+
+  .menu-icon,
+  .menu-icon::before {
+    display: block;
+    width: 1rem;
+    height: 2px;
+    background: currentColor;
+    position: relative;
+  }
+
+  .menu-icon::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    box-shadow: 0 10px 0 currentColor;
+  }
+
+  .nav {
+    position: absolute;
+    inset: var(--header-h) 0 auto 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.25rem var(--gutter) 1.5rem;
+    background: var(--model);
+    border-bottom: 1px solid var(--model-line);
+  }
+
+  .is-open .nav {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-links a {
+    display: block;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid var(--model-2);
+    font-size: var(--fs-lg);
+  }
+
+  .nav-links a.is-active {
+    border-bottom-color: var(--l-erp);
+  }
+
+  .lang {
+    align-self: flex-start;
+  }
+}

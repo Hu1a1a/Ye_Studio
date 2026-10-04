@@ -1,0 +1,133 @@
+:host {
+  display: block;
+}
+
+.footer {
+  padding-block: 3rem 2.5rem;
+  background: var(--desk);
+}
+
+.title-block {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1.1fr) 2fr repeat(2, minmax(6.5rem, 0.6fr));
+  border: 2px solid var(--ink);
+  background: var(--sheet);
+}
+
+.tb-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: 0.65rem 0.85rem;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.tb-label {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+
+.tb-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.tb-sign {
+  grid-row: span 2;
+  justify-content: flex-end;
+}
+
+.tb-sign img {
+  width: 11rem;
+  height: auto;
+  margin: -0.5rem 0 0.25rem -0.4rem;
+}
+
+.tb-title {
+  justify-content: space-between;
+}
+
+.tb-contact {
+  grid-column: 2;
+}
+
+.tb-contact .tb-value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-family: var(--font-text);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.tb-links {
+  grid-column: 3 / span 2;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 0.35rem 1rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.tb-cell:nth-child(4),
+.tb-links {
+  border-right: 0;
+}
+
+.tb-sign,
+.tb-contact,
+.tb-links {
+  border-bottom: 0;
+}
+
+.colophon {
+  margin-top: 1.25rem;
+  max-width: 52rem;
+  font-size: var(--fs-xs);
+  color: var(--ink-2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .tb-sign img {
+    filter: invert(1);
+  }
+}
+
+@media (max-width: 48rem) {
+  .title-block {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tb-sign {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .tb-title,
+  .tb-contact,
+  .tb-links {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .tb-cell:nth-child(3) {
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .tb-cell:nth-child(4) {
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .tb-links {
+    border-bottom: 0;
+  }
+}

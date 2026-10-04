@@ -1,0 +1,43 @@
+<header class="bar" [class.is-open]="open()">
+  <div class="page bar-inner">
+    <a routerLink="/home" class="brand" [attr.aria-label]="i18n.t(ui.nav.home)">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 1v8M12 15v8M1 12h8M15 12h8" />
+        <rect x="9" y="9" width="6" height="6" />
+      </svg>
+      <span class="brand-name">Ye Studio</span>
+    </a>
+
+    <button
+      type="button"
+      class="menu-btn"
+      aria-controls="main-nav"
+      [attr.aria-expanded]="open()"
+      (click)="open.update((v) => !v)"
+    >
+      <span class="menu-icon" aria-hidden="true"></span>
+      {{ i18n.t(ui.nav.menu) }}
+    </button>
+
+    <nav id="main-nav" class="nav" [attr.aria-label]="i18n.t(ui.nav.main)">
+      <ul class="nav-links">
+        @for (link of links; track link.path) {
+          <li>
+            <a [routerLink]="link.path" routerLinkActive="is-active" ariaCurrentWhenActive="page">
+              {{ i18n.t(link.label) }}
+            </a>
+          </li>
+        }
+      </ul>
+      <div class="lang" role="group" [attr.aria-label]="i18n.t(ui.nav.language)">
+        <button type="button" lang="es" [attr.aria-pressed]="i18n.lang() === 'es'" (click)="i18n.set('es')">
+          ES
+        </button>
+        <button type="button" lang="en" [attr.aria-pressed]="i18n.lang() === 'en'" (click)="i18n.set('en')">
+          EN
+        </button>
+      </div>
+      <a routerLink="/contacto" class="btn btn-primary nav-cta">{{ i18n.t(ui.nav.cta) }}</a>
+    </nav>
+  </div>
+</header>

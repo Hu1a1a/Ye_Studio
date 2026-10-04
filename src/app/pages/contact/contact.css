@@ -1,0 +1,166 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(15rem, 1fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: start;
+}
+
+/* El formulario es una «orden de trabajo»: hoja con marco y cajetín de campos. */
+.order {
+  border: 1.5px solid var(--ink);
+  background: var(--sheet);
+}
+
+.order-head {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.order-head h2 {
+  font-size: var(--fs-xl);
+}
+
+.order-head p {
+  font-size: var(--fs-sm);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.field:nth-child(odd):not(.wide) {
+  border-right: 1px solid var(--rule);
+}
+
+.field.wide {
+  grid-column: 1 / -1;
+}
+
+.field > span {
+  font-size: 0.8rem;
+  color: var(--ink-2);
+  letter-spacing: 0.02em;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--desk) 55%, var(--sheet));
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-sm);
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ink);
+  outline: 2px solid var(--redline);
+  outline-offset: 1px;
+}
+
+textarea[aria-invalid='true'] {
+  border-color: var(--redline);
+}
+
+small {
+  font-size: var(--fs-xs);
+}
+
+.error {
+  color: var(--redline);
+  font-weight: 500;
+  min-height: 1.2em;
+}
+
+.send {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.btn-text {
+  min-height: 2.75rem;
+  padding: 0 0.5rem;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: 500 var(--fs-sm) / 1 var(--font-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.direct {
+  display: grid;
+  gap: 1rem;
+}
+
+.direct h2 {
+  font-size: var(--fs-xl);
+}
+
+.direct h3 {
+  margin-top: 0.75rem;
+  font-size: 1.15rem;
+}
+
+.channels a {
+  text-decoration: none;
+}
+
+.channels a + a {
+  border-top: 1px solid var(--rule);
+}
+
+.channels a:hover .tb-value {
+  text-decoration: underline;
+}
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 500;
+}
+
+@media (max-width: 56rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 36rem) {
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .field:nth-child(odd):not(.wide) {
+    border-right: 0;
+  }
+}

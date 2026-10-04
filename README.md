@@ -1,27 +1,45 @@
-# Ye STUDIO
+# Ye Studio
 
-![foto de cabecera](https://hu1a1a.github.io/YK-Web-Studio/assets/YK%20WEB%20STUDIO.jpg)
+Portafolio de **Yang Ye** (Ye Studio): software a medida e IA aplicada — CRM y ERP, cotizadores, facturación
+electrónica, LLM, RAG, agentes e IA privada.
 
-## Principal
+**Web:** https://hu1a1a.github.io/Ye_Studio/ · versión en inglés para clientes internacionales:
+https://hu1a1a.github.io/Ye_Studio/#/home?lang=en
 
-Proyecto de página de presentación del YK Web Studio para la promoción del estudio.
+## Qué hay
 
-Página web en contrucción y continua mejora.
+| Ruta | Página |
+|---|---|
+| `#/home` | Portada (espacio modelo de CAD), proyectos destacados, servicios, método, reseñas y trayectoria |
+| `#/proyectos` | Los 17 proyectos, filtrables por capa (IA, CRM/ERP, automatización, infraestructura, webs) |
+| `#/proyectos/<slug>` | Ficha de cada proyecto: problema, qué se construyó, detalles técnicos, arquitectura y cajetín |
+| `#/servicios` | Servicios con paquetes, plazos y preguntas frecuentes (sin precios) |
+| `#/sobre-mi` | Bio, herramientas, idiomas, trayectoria y reseñas |
+| `#/contacto` | Encargo de trabajo: compone el mensaje y lo abre en el correo o WhatsApp del visitante |
 
-[Visita nuestra web: YK Web Studio](https://hu1a1a.github.io/YK-Web-Studio/)
+Los enlaces antiguos (`#/nosotros`, `#/oldHome`) redirigen a las páginas nuevas.
 
-Realizado mediante framework Angular y TypeScript.
+## Editar el contenido
 
-## Servicio
+Todo el texto está en `src/app/data/`, siempre en español e inglés (`{ es: '…', en: '…' }`):
 
-*Damos servicio a todo tipo de proyecto de diseño gráfico y de programación de pagina web*
+- `projects.ts` — proyectos (orden = nº de hoja), cifras, stack, enlaces, captura o esquema de arquitectura.
+- `services.ts` — servicios, paquetes, FAQ, pasos de trabajo y formas de contratar.
+- `profile.ts` — contacto, perfiles (LinkedIn, GitHub, Malt, Fiverr), reseñas, trayectoria, bio y herramientas.
+- `ui.ts` — textos de interfaz.
 
-### Founders
+Las capturas de las webs están en `public/img/projects/` (1280×800) y la imagen para compartir el enlace en
+`public/og.png` (1200×630).
 
-***Founder Programador FrontEnd y BackEnd: Yang Ye***
+## Desarrollo y publicación
 
-    Contacto: +34 691 73 70 22
+Angular 22 (componentes standalone, signals, sin zone.js). Requiere Node 22 o superior.
 
-***Founder Diseñador Gráfico: Albert Elkassem***
+```bash
+npm install
+npm start          # http://localhost:4200/Ye_Studio/
+npm run build      # genera la web estática en docs/
+```
 
-    Contacto: +34 699 04 04 63
+GitHub Pages sirve la carpeta `docs/` de la rama `master`: para publicar, `npm run build`, commit de `docs/` y
+`git push`. Las rutas van en el hash (`#/…`), así que no hace falta `404.html`.
