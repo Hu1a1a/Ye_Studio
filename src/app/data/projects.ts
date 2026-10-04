@@ -25,8 +25,12 @@ export interface Project {
   metrics: Metric[];
   stack: string[];
   links?: { label: L; url: string }[];
-  /** Captura (webs) en public/img/projects. */
+  /** Captura principal en public/img/projects. */
   image?: string;
+  /** Más capturas, con datos anonimizados en los proyectos confidenciales. */
+  gallery?: { src: string; caption: L }[];
+  /** Ejemplo de lo que produce el sistema (datos ficticios). */
+  sample?: { title: L; meta: L; sections: { heading: L; text: L }[] };
   diagram?: Diagram;
 }
 
@@ -34,9 +38,10 @@ const NOW: L = { es: 'hoy', en: 'now' };
 const since = (year: number): L => ({ es: `${year} – ${NOW.es}`, en: `${year} – ${NOW.en}` });
 const year = (y: string): L => ({ es: y, en: y });
 
-const REFRIGERATION: L = {
-  es: 'Distribución de refrigeración industrial',
-  en: 'Industrial refrigeration distribution',
+/** Cliente confidencial: ni nombre ni detalles que permitan identificarlo. */
+const INDUSTRIAL: L = {
+  es: 'Distribución industrial',
+  en: 'Industrial distribution',
 };
 
 /**
@@ -51,45 +56,49 @@ export const PROJECTS: Project[] = [
     featured: true,
     title: { es: 'Intranet de IA privada sobre el ERP', en: 'Private AI intranet on top of the ERP' },
     client: null,
-    sector: REFRIGERATION,
+    sector: INDUSTRIAL,
     period: since(2025),
     role: { es: 'Arquitectura, desarrollo e infraestructura', en: 'Architecture, development and infrastructure' },
     summary: {
-      es: 'Chat con agentes que consultan el ERP, RAG sobre documentos y correo, informes redactados por IA y extracción de facturas. Todo con modelos open source en una GPU de la empresa: los datos no salen a la nube.',
-      en: 'Chat with agents that query the ERP, RAG over documents and email, AI-written reports and invoice extraction. All on open-source models on a company GPU: no data goes to the cloud.',
+      es: 'Plataforma propia de IA para toda la operación: unas treinta «skills» en nueve áreas de negocio, chat con agentes que consultan el ERP, informes que llegan solos por correo y un contestador de correo con umbral de confianza. Todo en servidores propios: los datos no salen de casa.',
+      en: 'An in-house AI platform for the whole operation: about thirty "skills" across nine business areas, chat with agents that query the ERP, reports that arrive by email on their own and an email responder with a confidence threshold. All on company servers: data never leaves the building.',
     },
     problem: {
-      es: 'Los datos del ERP eran difíciles de explotar, el trabajo con documentos y correo se hacía a mano y el equipo quería IA generativa, pero los datos de la empresa no podían enviarse a APIs externas.',
-      en: 'ERP data was hard to analyse, document and email work was done by hand, and the team wanted generative AI, but company data could not be sent to external APIs.',
+      es: 'Cada área (venta, comercial, compra, almacén, finanzas, posventa y administración) trabajaba a mano sobre los datos del ERP, el correo y la documentación técnica. La empresa quería IA generativa, pero sin enviar sus datos a servicios externos ni depender de una suscripción.',
+      en: 'Every area (sales, field sales, purchasing, warehouse, finance, after-sales and admin) worked by hand on ERP data, email and technical documentation. The company wanted generative AI without sending its data to external services or depending on a subscription.',
     },
     built: [
       {
-        es: 'Chat con IA y RAG sobre la documentación, la unidad de red de la empresa indexada y búsqueda web',
-        en: 'AI chat with RAG over documentation, the indexed company file share and web search',
+        es: 'Catálogo de «skills»: cada pantalla es una tarea concreta (subir un archivo, extraer datos, analizar, redactar), agrupadas por área y visibles según el perfil de cada usuario. Con «Crear skill» el propio usuario describe la pantalla que necesita y la IA la genera',
+        en: 'Skills catalog: each screen is a concrete task (upload a file, extract data, analyse, draft), grouped by area and visible according to each user\'s profile. With "Create skill" users describe the screen they need and the AI builds it',
       },
       {
-        es: 'Agente que consulta el ERP con un catálogo cerrado de herramientas: el modelo nunca escribe SQL',
-        en: 'Agent that queries the ERP through a closed tool catalog: the model never writes SQL',
+        es: 'Chat con agentes: responde con documentación técnica, tarifas, correos y datos del ERP citando la fuente, con modos Razonar, Internet, Entrenamiento e Información interna. Los agentes consultan, buscan y preparan borradores sin poder borrar ni alterar datos sensibles',
+        en: 'Chat with agents: answers from technical documentation, price lists, emails and ERP data citing the source, with Reasoning, Internet, Training and Internal-data modes. Agents query, search and prepare drafts but cannot delete or alter sensitive data',
       },
       {
-        es: 'Banco de trabajo «Documentos IA» para analizar, extraer, transformar y editar PDF y DOCX, y OCR de facturas',
-        en: '"AI Documents" workbench to analyse, extract, transform and edit PDF and DOCX files, plus invoice OCR',
+        es: 'Venta y facturación: análisis por comercial, cliente, zona, grupo y marca con desglose, e informes de venta redactados por IA. Cada comercial recibe su informe semanal y mensual por correo',
+        en: 'Sales and billing: analysis by sales rep, customer, region, group and brand with drill-down, plus AI-written sales reports. Every rep gets a weekly and a monthly report by email',
       },
       {
-        es: 'Exploradores de KPI (facturación, ofertas, B2B) con detalle al hacer clic y filtros que se acumulan en la URL',
-        en: 'KPI explorers (billing, quotes, B2B) with click-through detail and filters that stack in the URL',
+        es: 'Objetivos comerciales: meta anual por comercial, zona, cliente y marca, con escenarios realista e idealista, reajustable durante el año y con el avance real superpuesto. Planificar, medir y comunicar en un solo sistema',
+        en: 'Sales targets: annual goal by rep, region, customer and brand, with realistic and stretch scenarios, adjustable during the year and with actual progress overlaid. Plan, measure and communicate in one system',
       },
       {
-        es: 'Informes semanales y mensuales de comerciales redactados por IA y enviados por correo',
-        en: 'Weekly and monthly sales-rep reports written by AI and sent by email',
+        es: '«Mis informes»: cualquier análisis se programa a diario, semanal o mensual y llega solo por correo; más de cien informes en el histórico, listos para releer, exportar a PDF o reenviar',
+        en: '"My reports": any analysis can be scheduled daily, weekly or monthly and arrives by email on its own; over a hundred reports in the history, ready to reread, export to PDF or forward',
       },
       {
-        es: 'Control de calidad de pedidos de venta y propuestas de compra con análisis de IA',
-        en: 'Sales-order quality control and purchase proposals with AI analysis',
+        es: 'Contestador de correos: indexa el buzón de soporte, clasifica cada correo y redacta la respuesta con un nivel de confianza explícito',
+        en: 'Email responder: indexes the support mailbox, classifies each email and drafts the reply with an explicit confidence level',
       },
       {
-        es: 'Seguimiento de envíos de 9 transportistas y firma electrónica con sello PAdES',
-        en: 'Shipment tracking across 9 carriers and electronic signature with a PAdES seal',
+        es: 'Entrenamiento: tarifas, manuales y FAQ indexados para RAG, y registro de cada resultado de la IA con su origen, su confianza y su «zona de mejora» para afinar prompts y conocimiento',
+        en: 'Training: price lists, manuals and FAQs indexed for RAG, and a log of every AI output with its source, confidence and "area for improvement" to tune prompts and knowledge',
+      },
+      {
+        es: 'Gobierno: acceso por perfiles (administración, venta, comercial, posventa, compra, almacén, finanzas…) y panel de estado de los modelos con llamadas, errores, latencia y modelos en memoria',
+        en: 'Governance: role-based access (admin, sales, field sales, after-sales, purchasing, warehouse, finance…) and a model status panel with calls, errors, latency and models in memory',
       },
     ],
     technical: [
@@ -98,24 +107,90 @@ export const PROJECTS: Project[] = [
         en: 'Open-source models served by Ollama on an NVIDIA DGX Spark: Qwen 2.5 32B for text, Llama 3.2 Vision 11B for images and bge-m3 for embeddings, with an automatic picker for the best installed model.',
       },
       {
-        es: 'Recuperación híbrida en tres capas: código de producto exacto, FULLTEXT de MySQL y similitud coseno sobre embeddings. Indexa PDF, DOCX, XLSX, PPTX e imágenes en fragmentos de unos 700 caracteres.',
-        en: 'Three-layer hybrid retrieval: exact product code, MySQL FULLTEXT and cosine similarity on embeddings. It indexes PDF, DOCX, XLSX, PPTX and images in chunks of about 700 characters.',
+        es: 'Contestador con umbral regulable: con confianza alta (p. ej. ≥ 80 %) la respuesta se envía sola; por debajo queda como borrador para una persona; los remitentes automáticos se descartan. Nada se envía a ciegas.',
+        en: 'Responder with an adjustable threshold: with high confidence (e.g. ≥ 80%) the reply is sent automatically; below it, it stays as a draft for a person; automated senders are discarded. Nothing goes out blind.',
       },
       {
-        es: 'Cola de trabajos persistente en MySQL: hasta 10 en paralelo, cancelables desde la interfaz, con cada llamada al modelo registrada y reintento automático.',
-        en: 'Durable job queue in MySQL: up to 10 in parallel, cancellable from the UI, with every model call logged and retried automatically.',
+        es: 'Recuperación híbrida en tres capas: código de producto exacto, FULLTEXT de MySQL y similitud coseno sobre embeddings. Indexa correo y servidor de archivos (PDF, DOCX, XLSX, PPTX e imágenes) en fragmentos de unos 700 caracteres.',
+        en: 'Three-layer hybrid retrieval: exact product code, MySQL FULLTEXT and cosine similarity on embeddings. It indexes email and the file server (PDF, DOCX, XLSX, PPTX and images) in chunks of about 700 characters.',
       },
       {
-        es: 'Tres procesos (web, worker de IA e indexador de ficheros) con PM2 en Ubuntu; el login se valida contra los usuarios del ERP.',
-        en: 'Three processes (web, AI worker and file indexer) under PM2 on Ubuntu; logins are checked against the ERP users.',
+        es: 'El agente usa un catálogo cerrado de herramientas: nunca escribe SQL, solo elige consultas de lectura parametrizadas y aprobadas.',
+        en: 'The agent uses a closed tool catalog: it never writes SQL, it only picks approved, parameterised read-only queries.',
+      },
+      {
+        es: 'Cola de trabajos persistente en MySQL (hasta 10 en paralelo, cancelables desde la interfaz), con cada llamada al modelo registrada y reintento automático; tres procesos (web, worker de IA e indexador) con PM2 en Ubuntu.',
+        en: 'Durable job queue in MySQL (up to 10 in parallel, cancellable from the UI), with every model call logged and retried automatically; three processes (web, AI worker and indexer) under PM2 on Ubuntu.',
       },
     ],
     metrics: [
-      { value: '63', label: { es: 'pantallas', en: 'screens' } },
-      { value: '47', label: { es: 'tipos de tarea de IA', en: 'AI job types' } },
-      { value: '0', label: { es: 'datos enviados a la nube', en: 'data sent to the cloud' } },
+      { value: '~30', label: { es: 'skills de IA', en: 'AI skills' } },
+      { value: '9', label: { es: 'áreas de negocio', en: 'business areas' } },
+      { value: '100+', label: { es: 'informes generados por IA', en: 'AI-generated reports' } },
+      { value: '100 %', label: { es: 'en servidores propios', en: 'on company servers' } },
     ],
     stack: ['Angular 19', 'Angular Material', 'Express 5', 'TypeScript', 'MySQL', 'Ollama', 'Qwen 2.5', 'bge-m3', 'Tesseract.js', 'Microsoft Graph', 'PM2'],
+    image: 'intranet-chat.jpg',
+    gallery: [
+      {
+        src: 'intranet-skills.jpg',
+        caption: {
+          es: 'Catálogo de skills por área, con su estado (producción o desarrollo) y el botón «Crear skill».',
+          en: 'Skills catalog by area, with their status (production or development) and the "Create skill" button.',
+        },
+      },
+      {
+        src: 'intranet-informes.jpg',
+        caption: {
+          es: 'Informes programados: frecuencia, destinatarios, estado y último envío.',
+          en: 'Scheduled reports: frequency, recipients, status and last delivery.',
+        },
+      },
+      {
+        src: 'intranet-training.jpg',
+        caption: {
+          es: 'Entrenamiento: documentos de la empresa indexados para RAG.',
+          en: 'Training: company documents indexed for RAG.',
+        },
+      },
+      {
+        src: 'intranet-perfiles.jpg',
+        caption: {
+          es: 'Usuarios y perfiles: cada perfil decide qué apartados ve cada persona.',
+          en: 'Users and profiles: each profile decides which sections a person can see.',
+        },
+      },
+    ],
+    sample: {
+      title: { es: 'Informe de semana · Comercial 7', en: 'Weekly report · Sales rep 7' },
+      meta: {
+        es: 'Generado por IA con un modelo interno y enviado por correo cada lunes',
+        en: 'Generated by AI with an in-house model and emailed every Monday',
+      },
+      sections: [
+        {
+          heading: { es: 'Resumen de tu semana', en: 'Your week in brief' },
+          text: {
+            es: 'Esta semana has gestionado un volumen de ofertas significativo: 148.500 € en presupuestos emitidos. Sin embargo, la conversión es baja: 2 pedidos cerrados frente a 16 ofertas pendientes. Tienes un gran potencial de cierre concentrado en Cliente A, con más de 62.000 € pendientes.',
+            en: 'This week you handled a significant volume of quotes: €148,500 issued. Conversion is low, though: 2 orders closed against 16 open quotes. You have strong closing potential concentrated in Customer A, with over €62,000 pending.',
+          },
+        },
+        {
+          heading: { es: 'Cómo vas', en: 'How you are doing' },
+          text: {
+            es: 'Tu facturación baja a corto plazo: el último mes cerrado cayó un 53,8 %. En el acumulado del año llevas 401.000 € frente a 538.000 € del año pasado (−25,4 %). El margen medio se mantiene saludable en el 33,6 %.',
+            en: 'Your billing is down in the short term: the last closed month fell 53.8%. Year to date you are at €401,000 against €538,000 last year (−25.4%). Average margin stays healthy at 33.6%.',
+          },
+        },
+        {
+          heading: { es: 'Tus clientes', en: 'Your customers' },
+          text: {
+            es: 'Cliente C sigue siendo tu cuenta más estratégica, con un crecimiento del 38,6 %. Conviene reactivar la prospección para no depender de dos o tres cuentas que concentran la mayor parte del volumen.',
+            en: 'Customer C is still your most strategic account, growing 38.6%. It is worth restarting prospecting so you do not depend on two or three accounts that hold most of the volume.',
+          },
+        },
+      ],
+    },
     diagram: {
       nodes: [
         { id: 'spa', label: 'Angular 19', x: 70, y: 60, layer: 'erp' },
@@ -124,7 +199,7 @@ export const PROJECTS: Project[] = [
         { id: 'queue', label: { es: 'Cola de\ntareas', en: 'Job\nqueue' }, x: 250, y: 160, kind: 'db' },
         { id: 'llm', label: 'Ollama · DGX Spark', x: 440, y: 160, layer: 'ai', w: 150 },
         { id: 'rag', label: { es: 'Índice RAG', en: 'RAG index' }, x: 70, y: 160, layer: 'ai' },
-        { id: 'files', label: { es: 'Unidad de red', en: 'File share' }, x: 70, y: 235, kind: 'ext' },
+        { id: 'files', label: { es: 'Correo y archivos', en: 'Email and files' }, x: 70, y: 235, kind: 'ext', w: 130 },
       ],
       edges: [
         { from: 'spa', to: 'api', both: true },
@@ -134,7 +209,7 @@ export const PROJECTS: Project[] = [
         { from: 'rag', to: 'queue' },
         { from: 'files', to: 'rag' },
       ],
-      dims: [{ x1: 175, x2: 515, y: 222, label: { es: '47 tipos de tarea de IA', en: '47 AI job types' } }],
+      dims: [{ x1: 175, x2: 515, y: 222, label: { es: '~30 skills en 9 áreas', en: '~30 skills in 9 areas' } }],
     },
   },
   {
@@ -322,7 +397,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     title: { es: 'Plataforma B2B, CRM y servicio técnico', en: 'B2B, CRM and field-service platform' },
     client: null,
-    sector: REFRIGERATION,
+    sector: INDUSTRIAL,
     period: since(2024),
     role: { es: 'Arquitectura y desarrollo full-stack', en: 'Architecture and full-stack development' },
     summary: {
@@ -335,8 +410,8 @@ export const PROJECTS: Project[] = [
     },
     built: [
       {
-        es: 'Portal B2B: tarifas, catálogos, despieces, promociones y calculadoras de cámaras frigoríficas y de instalaciones de CO2',
-        en: 'B2B portal: price lists, catalogs, exploded parts diagrams, promotions and calculators for cold rooms and CO2 installations',
+        es: 'Portal B2B: tarifas, catálogos, despieces, promociones y calculadoras técnicas para dimensionar instalaciones',
+        en: 'B2B portal: price lists, catalogs, exploded parts diagrams, promotions and technical calculators to size installations',
       },
       {
         es: 'Servicio técnico: equipos, órdenes de trabajo, incidencias, números de serie y mapa',
@@ -460,7 +535,7 @@ export const PROJECTS: Project[] = [
     layers: ['auto', 'infra'],
     title: { es: 'Puente de datos entre un ERP heredado y MySQL', en: 'Data bridge from a legacy ERP to MySQL' },
     client: null,
-    sector: REFRIGERATION,
+    sector: INDUSTRIAL,
     period: since(2024),
     role: { es: 'Diseño y desarrollo', en: 'Design and development' },
     summary: {
@@ -529,7 +604,7 @@ export const PROJECTS: Project[] = [
     layers: ['infra'],
     title: { es: 'Infraestructura IT híbrida y servidor de IA', en: 'Hybrid IT infrastructure and AI server' },
     client: null,
-    sector: REFRIGERATION,
+    sector: INDUSTRIAL,
     period: since(2023),
     role: { es: 'Dirección de tecnología (CIO)', en: 'Head of technology (CIO)' },
     summary: {
@@ -593,7 +668,7 @@ export const PROJECTS: Project[] = [
     layers: ['auto'],
     title: { es: 'Catálogo técnico generado en InDesign', en: 'Technical catalog generated in InDesign' },
     client: null,
-    sector: REFRIGERATION,
+    sector: INDUSTRIAL,
     period: since(2023),
     role: { es: 'Desarrollo del plugin', en: 'Plugin development' },
     summary: {
@@ -644,7 +719,7 @@ export const PROJECTS: Project[] = [
     layers: ['auto'],
     title: { es: 'Software de selección de equipos', en: 'Equipment selection software' },
     client: null,
-    sector: REFRIGERATION,
+    sector: INDUSTRIAL,
     period: year('2023'),
     role: { es: 'Desarrollo completo', en: 'End-to-end development' },
     summary: {

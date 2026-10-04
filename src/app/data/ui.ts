@@ -106,7 +106,14 @@ export const UI = {
     back: { es: 'Todos los proyectos', en: 'All projects' },
     confidential: { es: 'Confidencial', en: 'Confidential' },
     similar: { es: '¿Necesitas algo parecido?', en: 'Need something similar?' },
-    screenshot: { es: 'Captura de la web', en: 'Website screenshot' },
+    screenshot: { es: 'Captura', en: 'Screenshot' },
+    gallery: { es: 'Capturas', en: 'Screenshots' },
+    anonymised: {
+      es: 'Capturas reales del sistema en producción, con nombres y datos anonimizados.',
+      en: 'Real screenshots of the production system, with names and data anonymised.',
+    },
+    sample: { es: 'Así escribe la IA', en: 'How the AI writes' },
+    fictitious: { es: 'Ejemplo con datos ficticios', en: 'Example with fictitious data' },
   },
   services: {
     title: { es: 'Servicios', en: 'Services' },

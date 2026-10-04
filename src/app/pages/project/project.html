@@ -60,6 +60,42 @@
             </ul>
           </section>
 
+          @if (p.sample; as sample) {
+            <section class="block">
+              <h2>{{ i18n.t(ui.projects.sample) }}</h2>
+              <article class="sample">
+                <header class="sample-head">
+                  <p class="stamp">{{ i18n.t(ui.projects.fictitious) }}</p>
+                  <h3>{{ i18n.t(sample.title) }}</h3>
+                  <p class="sample-meta">{{ i18n.t(sample.meta) }}</p>
+                </header>
+                @for (section of sample.sections; track $index) {
+                  <h4>{{ $index + 1 }}) {{ i18n.t(section.heading) }}</h4>
+                  <p>{{ i18n.t(section.text) }}</p>
+                }
+              </article>
+            </section>
+          }
+
+          @if (p.gallery?.length) {
+            <section class="block block-wide">
+              <h2>{{ i18n.t(ui.projects.gallery) }}</h2>
+              @if (!p.client) {
+                <p class="muted gallery-note">{{ i18n.t(ui.projects.anonymised) }}</p>
+              }
+              <div class="gallery">
+                @for (shot of p.gallery; track shot.src) {
+                  <figure>
+                    <a [href]="'img/projects/' + shot.src" target="_blank" rel="noopener">
+                      <img [src]="'img/projects/' + shot.src" [alt]="i18n.t(shot.caption)" width="1100" height="509" loading="lazy" decoding="async" />
+                    </a>
+                    <figcaption>{{ i18n.t(shot.caption) }}</figcaption>
+                  </figure>
+                }
+              </div>
+            </section>
+          }
+
           @if (p.image && p.diagram) {
             <section class="block">
               <h2>{{ i18n.t(ui.projects.architecture) }}</h2>

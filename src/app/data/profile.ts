@@ -11,7 +11,6 @@ export const PROFILE = {
   city: 'Barcelona',
   links: {
     linkedin: 'https://www.linkedin.com/in/yang-y-48498815b/',
-    github: 'https://github.com/Hu1a1a',
     malt: 'https://www.malt.es/profile/yangye',
     fiverr: 'https://www.fiverr.com/yangye1',
     repo: 'https://github.com/Hu1a1a/Ye_Studio',
@@ -98,7 +97,7 @@ export const REVISIONS: Revision[] = [
     rev: 'D',
     period: { es: '2023 – hoy', en: '2023 – now' },
     title: { es: 'CIO y desarrollador full-stack', en: 'CIO & full-stack developer' },
-    org: { es: 'Distribuidor de refrigeración industrial (confidencial)', en: 'Industrial refrigeration distributor (confidential)' },
+    org: { es: 'Empresa de distribución industrial (confidencial)', en: 'Industrial distribution company (confidential)' },
     detail: {
       es: 'Toda la tecnología de la empresa: infraestructura híbrida, ERP, intranet de IA privada, plataforma B2B y automatizaciones.',
       en: 'All of the company technology: hybrid infrastructure, ERP, private AI intranet, B2B platform and automations.',

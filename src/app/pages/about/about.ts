@@ -20,7 +20,6 @@ import { RevisionTable } from '../../ui/revision-table';
           }
           <p class="profiles">
             <a [href]="profile.links.linkedin" target="_blank" rel="noopener">LinkedIn</a>
-            <a [href]="profile.links.github" target="_blank" rel="noopener">GitHub</a>
             <a [href]="profile.links.malt" target="_blank" rel="noopener">Malt</a>
             <a [href]="profile.links.fiverr" target="_blank" rel="noopener">Fiverr</a>
           </p>
